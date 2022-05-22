@@ -1,0 +1,15 @@
+name: my-second-workflow
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Hello world step
+        uses: ./.github/actions/hello-world-composite-action
+        id: hello
+        with:
+          who-to-greet: 'Revelator IO24'
+      - run: echo random-number ${{ steps.hello.outputs.random-number }}
+        shell: bash
+        
