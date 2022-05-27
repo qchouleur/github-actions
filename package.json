@@ -6,8 +6,9 @@
   "author": "Quentin C. <qchouleur@pobox.com>",
   "license": "MIT",
   "scripts": {
-    "test:local": "jest",
     "test": "jest --verbose ./dist",
+    "test:local": "jest",
+    "test:ci": "yarn run test --coverage --coverageDirectory output/",
     "build": "tsc"
   },
   "devDependencies": {
